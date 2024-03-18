@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  .debug{
+    @apply border-2 border-yellow-50
+  }
+}
+
+
+
+.zoom-out{
+  animation: zoom-out linear;
+  animation-timeline: view();
+  transform-origin: top;
+
+}
+
+
+.slide-bottom-text{
+  animation: slide-bottom-text linear;
+  animation-timeline: view();
+  animation-range: cover 0% cover 50%;
+}
+
+.fade-in-text{
+  animation: fade-in-text 4s linear;
+}
+
+
+.slide-left{
+  animation: slide-left linear;
+  animation-timeline: view() ;
+  animation-range: cover 0% cover 55%;
+
+}
+
+@keyframes slide-left {
+  0%{
+    opacity: 0;
+    transform: translateX(400px);
+
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.slide-right{
+  animation: slide-right linear;
+  animation-timeline: view() ;
+  animation-range: cover 0% cover 55%;
+
+}
+
+@keyframes slide-right {
+  0%{
+    opacity: 0;
+    transform: translateX(-400px);
+
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+
+  }
+}
+
+@keyframes fade-in-text{
+  from{
+      opacity: 0;
+  }
+  to{
+      opacity: 1;
+  }
+}
+
+@keyframes slide-bottom-text {
+  0%{
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0px);
+
+  }
+}
+
+
+@keyframes zoom-out {
+  0%{
+    opacity: 0.3;
+    scale: 0.4 0.4;
+  }
+
+
+  70%,100%{ 
+    opacity: 1;
+    scale: 1 1;
+
+  }
+}
